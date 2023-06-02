@@ -5,27 +5,18 @@
 
 from bs4 import BeautifulSoup
 import requests
-<<<<<<< HEAD
-=======
 import re
->>>>>>> 4d83461 (Functions added to have the lower price)
 import numpy as np
 import csv
 from datetime import datetime
 
-<<<<<<< HEAD
-LINK = "https://www.ebay.co.uk"
-=======
 LINK = "https://www.ebay.ca/sch/i.html?_from=R40&_trksid=p2334524.m570.l1311&_nkw=airpods+pro&_sacat=0&LH_TitleDesc=0&_odkw=macbook+pro&_osacat=0"
->>>>>>> 4d83461 (Functions added to have the lower price)
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-<<<<<<< HEAD
-=======
 def get_prices_by_link(link):
     r = requests.get(link)
     page_parse = BeautifulSoup(r.text,'html.parser')
@@ -66,16 +57,12 @@ def save_to_file(prices):
         writer = csv.writer(f)
         writer.writerow(fields)
 
->>>>>>> 4d83461 (Functions added to have the lower price)
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-<<<<<<< HEAD
-=======
     price = get_prices_by_link(LINK)
     prices_filtred = remove_outlies(price)
     print(get_average(prices_filtred))
 
->>>>>>> 4d83461 (Functions added to have the lower price)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
