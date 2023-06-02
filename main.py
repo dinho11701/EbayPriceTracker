@@ -53,7 +53,7 @@ def get_average(prices):
 
 def save_to_file(prices):
     fields = [datetime.today().strftime("%B-%D-%Y"),np.around(get_average(prices),2)]
-    with open('prices.csv','a',newline = '') as f:
+    with open('prices.txt','a',newline = '') as f:
         writer = csv.writer(f)
         writer.writerow(fields)
 
@@ -64,5 +64,6 @@ if __name__ == '__main__':
     price = get_prices_by_link(LINK)
     prices_filtred = remove_outlies(price)
     print(get_average(prices_filtred))
+    save_to_file(prices_filtred)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
